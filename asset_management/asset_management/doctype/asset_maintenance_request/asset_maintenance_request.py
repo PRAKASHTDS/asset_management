@@ -38,3 +38,38 @@ class AssetMaintenanceRequest(Document):
         )
         if existing:
             frappe.throw(_("There is already an active maintenance request for this asset."))
+
+import frappe
+from frappe.utils import get_datetime, time_diff_in_hours
+
+def update_resolution_time(doc, method):
+    """Triggered when Task is completed – updates the linked Asset Maintenance Request."""
+    frappe.logger().info("=== update_resolution_time triggered ===")
+    frappe.logger().info(f"Task: {doc.name}, Status: {doc.status}")
+
+    # ✅ Use the correct field name for the linked AMR
+    if doc.status == "Completed" and getattr(doc, "custom_asset_maintenance_request", None):
+        amr_name = doc.custom_asset_maintenance_request
+        frappe.logger().info(f"Linked AMR: {amr_name}")
+
+        if amr_name:
+            amr_doc = frappe.get_doc("Asset Maintenance Request", amr_name)
+
+            frappe.logger().info(f"AMR Request Date: {amr_doc.request_date}")
+            frappe.logger().info(f"Task Completion Date: {getattr(doc, 'custom_expected_completion_date', None)}")
+
+            # ✅ Calculate time difference
+            if amr_doc.request_date and doc.custom_expected_completion_date:
+                request_dt = get_datetime(amr_doc.request_date)
+                completion_dt = get_datetime(doc.custom_expected_completion_date)
+
+                hours = time_diff_in_hours(completion_dt, request_dt)
+                amr_doc.resolution_time_hours = round(hours, 2)
+                frappe.logger().info(f"Calculated Resolution Time: {hours} hours")
+
+            # ✅ Update AMR status
+            amr_doc.status = "In Review"
+            amr_doc.save(ignore_permissions=True)
+            frappe.msgprint(f"Updated AMR {amr_doc.name} to 'In Review' with {amr_doc.resolution_time_hours} hrs")
+    else:
+        frappe.logger().info("Task not completed or no linked AMR.")

@@ -9,6 +9,10 @@ app_license = "mit"
 # ------------------
 fixtures = [
     "Custom Field",
+    "Custom Role",
+    "Custom DocPerm",
+    "Number Card",
+    "Dashboard",
     "Property Setter",
     "Client Script",
     "Server Script",
@@ -17,6 +21,16 @@ fixtures = [
     "Dashboard Chart"
 ]
 
+# doc_events = {
+#     "Task": {
+#         "on_update": "asset_management.asset_management.doctype.task.task.update_resolution_time"
+#     }
+# }
+doc_events = {
+    "Task": {
+        "on_update": "asset_management.asset_management.doctype.asset_maintenance_request.asset_maintenance_request.update_resolution_time"
+    }
+}
 
 # required_apps = []
 

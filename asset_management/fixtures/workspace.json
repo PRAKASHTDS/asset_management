@@ -1,7 +1,29 @@
 [
  {
-  "charts": [],
-  "content": "[{\"id\":\"aCk49ShVRs\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Home\",\"col\":12}},{\"id\":\"kb3XPLg8lb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"nWd2KJPW8l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"id\":\"snrzfbFr5Y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"SHJKakmLLf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier\",\"col\":3}},{\"id\":\"CPxEyhaf3G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"WU4F-HUcIQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leaderboard\",\"col\":3}},{\"id\":\"d_KVM1gsf9\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"JVu8-FJZCu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"JiuSi0ubOg\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounting\",\"col\":4}},{\"id\":\"ji2Jlm3Q8i\",\"type\":\"card\",\"data\":{\"card_name\":\"Stock\",\"col\":4}},{\"id\":\"N61oiXpuwK\",\"type\":\"card\",\"data\":{\"card_name\":\"CRM\",\"col\":4}},{\"id\":\"6J0CVl1mPo\",\"type\":\"card\",\"data\":{\"card_name\":\"Data Import and Settings\",\"col\":4}}]",
+  "charts": [
+   {
+    "chart_name": "Total Critical Requests",
+    "label": "Critical Requests",
+    "parent": "Home",
+    "parentfield": "charts",
+    "parenttype": "Workspace"
+   },
+   {
+    "chart_name": "Total Open Requests",
+    "label": "Total Open Requests",
+    "parent": "Home",
+    "parentfield": "charts",
+    "parenttype": "Workspace"
+   },
+   {
+    "chart_name": "Pie Chart by Status",
+    "label": "Pie Chart by Status",
+    "parent": "Home",
+    "parentfield": "charts",
+    "parenttype": "Workspace"
+   }
+  ],
+  "content": "[{\"id\":\"upEU3Wnlhv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Maintenance Request Report\",\"col\":4}},{\"id\":\"Tp402gi49W\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Critical Requests\",\"col\":12}},{\"id\":\"ioGCUaQLMK\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Total Open Requests\",\"col\":12}},{\"id\":\"XAxC2uUouZ\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Pie Chart by Status\",\"col\":12}},{\"id\":\"aCk49ShVRs\",\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Home\",\"col\":12}},{\"id\":\"kb3XPLg8lb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"nWd2KJPW8l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"id\":\"snrzfbFr5Y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"SHJKakmLLf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier\",\"col\":3}},{\"id\":\"CPxEyhaf3G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"WU4F-HUcIQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leaderboard\",\"col\":3}},{\"id\":\"d_KVM1gsf9\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"JVu8-FJZCu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"JiuSi0ubOg\",\"type\":\"card\",\"data\":{\"card_name\":\"Accounting\",\"col\":4}},{\"id\":\"ji2Jlm3Q8i\",\"type\":\"card\",\"data\":{\"card_name\":\"Stock\",\"col\":4}},{\"id\":\"N61oiXpuwK\",\"type\":\"card\",\"data\":{\"card_name\":\"CRM\",\"col\":4}},{\"id\":\"6J0CVl1mPo\",\"type\":\"card\",\"data\":{\"card_name\":\"Data Import and Settings\",\"col\":4}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
@@ -391,7 +413,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2023-05-24 14:47:18.765388",
+  "modified": "2025-10-17 00:22:44.219471",
   "module": "Setup",
   "name": "Home",
   "number_cards": [],
@@ -417,6 +439,23 @@
     "restrict_to_domain": null,
     "stats_filter": null,
     "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Asset Maintenance Request Report",
+    "link_to": "Asset Maintenance Request Report",
+    "parent": "Home",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "report_ref_doctype": "Asset Maintenance Request",
+    "restrict_to_domain": null,
+    "stats_filter": null,
+    "type": "Report",
     "url": null
    },
    {
@@ -13597,7 +13636,29 @@
   "title": "Build"
  },
  {
-  "charts": [],
+  "charts": [
+   {
+    "chart_name": "Total Open Requests",
+    "label": "Open Requests",
+    "parent": "Welcome Workspace",
+    "parentfield": "charts",
+    "parenttype": "Workspace"
+   },
+   {
+    "chart_name": "Total Critical Requests",
+    "label": "Critical Requests",
+    "parent": "Welcome Workspace",
+    "parentfield": "charts",
+    "parenttype": "Workspace"
+   },
+   {
+    "chart_name": "Pie Chart by Status",
+    "label": "Pie Chart",
+    "parent": "Welcome Workspace",
+    "parentfield": "charts",
+    "parenttype": "Workspace"
+   }
+  ],
   "content": "[{\"id\":\"2eyXSHwMTE\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Hi,</span>\",\"col\":12}},{\"id\":\"ZusKvFOXgu\",\"type\":\"paragraph\",\"data\":{\"text\":\"I guess you don't have access to any workspace yet, but you can create one just for yourself. Click on the <b>Create Workspace</b> button to create one.<br>\",\"col\":12}}]",
   "custom_blocks": [],
   "docstatus": 0,
@@ -13609,7 +13670,7 @@
   "is_hidden": 0,
   "label": "Welcome Workspace",
   "links": [],
-  "modified": "2023-07-28 20:15:32.222029",
+  "modified": "2025-10-17 00:07:25.517222",
   "module": "Core",
   "name": "Welcome Workspace",
   "number_cards": [],
