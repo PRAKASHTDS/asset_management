@@ -1,0 +1,40 @@
+[
+ {
+  "allow_guest": 0,
+  "api_method": null,
+  "cron_format": null,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Server Script",
+  "doctype_event": "After Save",
+  "enable_rate_limit": 0,
+  "event_frequency": "All",
+  "modified": "2025-10-14 20:52:38.768121",
+  "module": "asset_management",
+  "name": "If Priority = “Urgent”, send email to Maintenance Supervisor",
+  "rate_limit_count": 5,
+  "rate_limit_seconds": 86400,
+  "reference_doctype": "Asset Maintenance Request",
+  "script": "# This script runs automatically after saving an Asset Maintenance Request\n\nif doc.priority == \"Urgent\":\n    # Find users with Maintenance Team Supervisor role\n    recipients = frappe.get_all(\n        \"Has Role\",\n        filters={\"role\": \"Maintenance Team Supervisor\"},\n        fields=[\"parent\"]\n    )\n\n    emails = []\n    for r in recipients:\n        user = frappe.get_doc(\"User\", r.parent)\n        if user.enabled and user.email:\n            emails.append(user.email)\n\n\n    if not emails:\n        frappe.msgprint(\"⚠️ No recipients found. Check user roles and email IDs.\")\n    else:\n        try:\n            frappe.sendmail(\n                recipients=emails,\n                subject=f\"Urgent Maintenance Request for Asset {doc.asset}\",\n                message=f\"\"\"\n                    <p>Hello Team,</p>\n                    <p>An urgent maintenance request has been submitted.</p>\n                    <p><b>Asset:</b> {doc.asset}</p>\n                    <p><b>Requested By:</b> {doc.requested_by}</p>\n                    <p><b>Priority:</b> {doc.priority}</p>\n                    <p><b>Status:</b> {doc.status}</p>\n                    <p>Kindly review this request immediately.</p>\n                \"\"\"\n            )\n            \n        except Exception as e:\n            frappe.msgprint(f\"❌ Error sending email: {e}\")\n",
+  "script_type": "DocType Event"
+ },
+ {
+  "allow_guest": 0,
+  "api_method": null,
+  "cron_format": null,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Server Script",
+  "doctype_event": "After Save",
+  "enable_rate_limit": 0,
+  "event_frequency": "All",
+  "modified": "2025-10-15 02:22:52.279262",
+  "module": "asset_management",
+  "name": "Auto-update when Task is Completed",
+  "rate_limit_count": 5,
+  "rate_limit_seconds": 86400,
+  "reference_doctype": "Task",
+  "script": "\n# Trigger only when Task is completed\nif doc.status == \"Completed\" and doc.asset_maintenance_request:\n    try:\n        # Fetch linked Asset Maintenance Request\n        req = frappe.get_doc(\"Asset Maintenance Request\", doc.asset_maintenance_request)\n\n        # Get start (creation time) and end (current time)\n        start = get_datetime(req.creation)\n        end = now_datetime()\n\n        # Calculate difference\n        diff_seconds = (end - start).total_seconds()\n        hours = int(diff_seconds // 3600)\n        minutes = int((diff_seconds % 3600) // 60)\n        resolution_str = f\"{hours}h {minutes}m\"\n\n        # Update the Maintenance Request\n        frappe.db.set_value(\"Asset Maintenance Request\", req.name, {\n            \"status\": \"In Review\",\n            \"resolution_time_hours\": round(diff_seconds / 3600, 2),\n            \"resolution_time_display\": resolution_str\n        })\n\n        frappe.msgprint(\n            f\"✅ Asset Maintenance Request <b>{req.name}</b> updated to <b>In Review</b>.<br>\"\n            f\"Resolution Time: <b>{resolution_str}</b>\"\n        )\n\n    except Exception as e:\n        frappe.log_error(frappe.get_traceback(), \"Asset Maintenance Auto Update Error\")\n",
+  "script_type": "DocType Event"
+ }
+]

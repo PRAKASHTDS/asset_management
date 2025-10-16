@@ -7,6 +7,16 @@ app_license = "mit"
 
 # Apps
 # ------------------
+fixtures = [
+    "Custom Field",
+    "Property Setter",
+    "Client Script",
+    "Server Script",
+    "Workspace",
+    "Report",
+    "Dashboard Chart"
+]
+
 
 # required_apps = []
 
