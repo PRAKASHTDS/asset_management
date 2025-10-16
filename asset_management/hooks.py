@@ -21,11 +21,6 @@ fixtures = [
     "Dashboard Chart"
 ]
 
-# doc_events = {
-#     "Task": {
-#         "on_update": "asset_management.asset_management.doctype.task.task.update_resolution_time"
-#     }
-# }
 doc_events = {
     "Task": {
         "on_update": "asset_management.asset_management.doctype.asset_maintenance_request.asset_maintenance_request.update_resolution_time"

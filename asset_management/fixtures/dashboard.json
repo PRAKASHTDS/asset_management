@@ -552,18 +552,11 @@
   "chart_options": null,
   "charts": [
    {
-    "chart": null,
-    "parent": "Maintenance Dashboard",
-    "parentfield": "charts",
-    "parenttype": "Dashboard",
-    "width": "Half"
-   },
-   {
     "chart": "Pie Chart by Status",
     "parent": "Maintenance Dashboard",
     "parentfield": "charts",
     "parenttype": "Dashboard",
-    "width": "Half"
+    "width": "Full"
    },
    {
     "chart": "Total Critical Requests",
@@ -577,7 +570,14 @@
     "parent": "Maintenance Dashboard",
     "parentfield": "charts",
     "parenttype": "Dashboard",
-    "width": "Half"
+    "width": "Full"
+   },
+   {
+    "chart": "Pie Chart Status",
+    "parent": "Maintenance Dashboard",
+    "parentfield": "charts",
+    "parenttype": "Dashboard",
+    "width": "Full"
    }
   ],
   "dashboard_name": "Maintenance Dashboard",
@@ -585,7 +585,7 @@
   "doctype": "Dashboard",
   "is_default": 0,
   "is_standard": 0,
-  "modified": "2025-10-16 23:59:35.068782",
+  "modified": "2025-10-17 02:51:19.602425",
   "module": null,
   "name": "Maintenance Dashboard"
  }
