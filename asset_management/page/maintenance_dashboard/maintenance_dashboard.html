@@ -1,0 +1,35 @@
+<div class="dashboard-container">
+    <div class="dashboard-summary">
+        <div class="stat-box">
+            <h4>Total Open Requests</h4>
+            <p id="total_open" class="stat-value">0</p>
+        </div>
+        <div class="stat-box">
+            <h4>Critical Priority Requests</h4>
+            <p id="total_critical" class="stat-value">0</p>
+        </div>
+    </div>
+
+    <div id="status_pie_chart" class="chart-container" style="margin-top: 30px;"></div>
+</div>
+
+<style>
+.dashboard-summary {
+    display: flex;
+    gap: 20px;
+}
+.stat-box {
+    flex: 1;
+    background: #f9fafc;
+    border: 1px solid #dfe3e8;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4b4b4b;
+}
+</style>
