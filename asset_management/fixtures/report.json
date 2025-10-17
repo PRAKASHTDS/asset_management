@@ -5079,50 +5079,6 @@
   "docstatus": 0,
   "doctype": "Report",
   "filters": [],
-  "is_standard": "No",
-  "javascript": null,
-  "json": null,
-  "letter_head": null,
-  "modified": "2025-10-15 07:54:01.545726",
-  "module": "asset_management",
-  "name": "Asset Maintenance Summary",
-  "prepared_report": 0,
-  "query": "SELECT\n    status AS \"Status:Data:120\",\n    COUNT(*) AS \"Count:Int:100\"\nFROM\n    `tabAsset Maintenance Request`\nGROUP BY\n    status\nORDER BY\n    COUNT(*) DESC;\n",
-  "ref_doctype": "Asset Maintenance Request",
-  "reference_report": null,
-  "report_name": "Asset Maintenance Summary",
-  "report_script": null,
-  "report_type": "Query Report",
-  "roles": [
-   {
-    "parent": "Asset Maintenance Summary",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "System Manager"
-   },
-   {
-    "parent": "Asset Maintenance Summary",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Maintenance Team Supervisor"
-   },
-   {
-    "parent": "Asset Maintenance Summary",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Maintenance Team Member"
-   }
-  ],
-  "timeout": 0
- },
- {
-  "add_total_row": 0,
-  "add_translate_data": 0,
-  "columns": [],
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Report",
-  "filters": [],
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
@@ -8286,35 +8242,35 @@
   "docstatus": 0,
   "doctype": "Report",
   "filters": [],
-  "is_standard": "No",
+  "is_standard": "Yes",
   "javascript": null,
   "json": "{}",
   "letter_head": null,
-  "modified": "2025-10-16 23:47:55.611959",
+  "modified": "2025-10-17 09:48:40.054149",
   "module": "asset_management",
-  "name": "Asset Maintenance Request Report",
+  "name": "Asset Maintenance Request",
   "prepared_report": 0,
   "query": null,
   "ref_doctype": "Asset Maintenance Request",
   "reference_report": null,
-  "report_name": "Asset Maintenance Request Report",
+  "report_name": "Asset Maintenance Request",
   "report_script": null,
   "report_type": "Report Builder",
   "roles": [
    {
-    "parent": "Asset Maintenance Request Report",
+    "parent": "Asset Maintenance Request",
     "parentfield": "roles",
     "parenttype": "Report",
     "role": "System Manager"
    },
    {
-    "parent": "Asset Maintenance Request Report",
+    "parent": "Asset Maintenance Request",
     "parentfield": "roles",
     "parenttype": "Report",
     "role": "Maintenance Team Supervisor"
    },
    {
-    "parent": "Asset Maintenance Request Report",
+    "parent": "Asset Maintenance Request",
     "parentfield": "roles",
     "parenttype": "Report",
     "role": "Maintenance Team Member"

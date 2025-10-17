@@ -18,6 +18,8 @@ fixtures = [
     "Server Script",
     "Workspace",
     "Report",
+    "Email Domain",
+    "Email Account",
     "Dashboard Chart"
 ]
 
