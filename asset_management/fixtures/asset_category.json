@@ -1,0 +1,24 @@
+[
+ {
+  "accounts": [
+   {
+    "accumulated_depreciation_account": "Accumulated Depreciations - CI",
+    "capital_work_in_progress_account": null,
+    "company_name": "craft interactive",
+    "depreciation_expense_account": "Depreciation - CI",
+    "fixed_asset_account": "Office Equipments - CI",
+    "parent": "Electronics Item",
+    "parentfield": "accounts",
+    "parenttype": "Asset Category"
+   }
+  ],
+  "asset_category_name": "Electronics Item",
+  "docstatus": 0,
+  "doctype": "Asset Category",
+  "enable_cwip_accounting": 0,
+  "finance_books": [],
+  "modified": "2025-10-16 12:14:00.781639",
+  "name": "Electronics Item",
+  "non_depreciable_category": 0
+ }
+]

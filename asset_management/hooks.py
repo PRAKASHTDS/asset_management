@@ -20,6 +20,11 @@ fixtures = [
     "Report",
     "Email Domain",
     "Email Account",
+    "Employee",
+    "Department",
+    "Asset",
+    "Item",
+    "Asset Category",
     "Dashboard Chart"
 ]
 
