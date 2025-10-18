@@ -4,10 +4,10 @@
   "doctype": "Client Script",
   "dt": "Asset Maintenance Request",
   "enabled": 1,
-  "modified": "2025-10-17 10:02:21.994098",
+  "modified": "2025-10-18 12:44:10.442825",
   "module": "asset_management",
   "name": "Asset in use",
-  "script": "frappe.ui.form.on(\"Asset Maintenance Request\", {\n    setup: function(frm) {\n        frm.set_query(\"custom_status\", function() {\n            return {\n                filters: {\n                    custom_status: \"In use\"\n                }\n            };\n        });\n    }\n});\n",
+  "script": "frappe.ui.form.on(\"Asset Maintenance Request\", {\n    refresh(frm) {\n        console.log(\"🟢 AMR.js loaded successfully!\");\n    },\n    onload_post_render(frm) {\n        console.log(\"✅ Client Script triggered\");\n        frm.set_query(\"asset\", () => ({\n            filters: [[\"Asset\", \"custom_status\", \"=\", \"In Use\"]]\n        }));\n    }\n});\n",
   "view": "Form"
  },
  {

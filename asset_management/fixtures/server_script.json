@@ -28,7 +28,7 @@
   "doctype_event": "After Save",
   "enable_rate_limit": 0,
   "event_frequency": "All",
-  "modified": "2025-10-15 02:22:52.279262",
+  "modified": "2025-10-18 01:00:10.309939",
   "module": "asset_management",
   "name": "Auto-update when Task is Completed",
   "rate_limit_count": 5,

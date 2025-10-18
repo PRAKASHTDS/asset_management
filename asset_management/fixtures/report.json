@@ -7,50 +7,6 @@
   "docstatus": 0,
   "doctype": "Report",
   "filters": [],
-  "is_standard": "No",
-  "javascript": null,
-  "json": null,
-  "letter_head": null,
-  "modified": "2025-10-16 15:16:22.693098",
-  "module": "Desk",
-  "name": "_Test Report 1",
-  "prepared_report": 0,
-  "query": null,
-  "ref_doctype": "Event",
-  "reference_report": null,
-  "report_name": "_Test Report 1",
-  "report_script": null,
-  "report_type": "Query Report",
-  "roles": [
-   {
-    "parent": "_Test Report 1",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Desk User"
-   },
-   {
-    "parent": "_Test Report 1",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "System Manager"
-   },
-   {
-    "parent": "_Test Report 1",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "All"
-   }
-  ],
-  "timeout": 0
- },
- {
-  "add_total_row": 0,
-  "add_translate_data": 0,
-  "columns": [],
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Report",
-  "filters": [],
   "is_standard": "Yes",
   "javascript": null,
   "json": null,
