@@ -8189,49 +8189,5 @@
    }
   ],
   "timeout": 0
- },
- {
-  "add_total_row": 0,
-  "add_translate_data": 0,
-  "columns": [],
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Report",
-  "filters": [],
-  "is_standard": "Yes",
-  "javascript": null,
-  "json": "{}",
-  "letter_head": null,
-  "modified": "2025-10-17 12:17:37.076659",
-  "module": "asset_management",
-  "name": "Asset Maintenance Request Report",
-  "prepared_report": 0,
-  "query": null,
-  "ref_doctype": "Asset Maintenance Request",
-  "reference_report": null,
-  "report_name": "Asset Maintenance Request Report",
-  "report_script": null,
-  "report_type": "Report Builder",
-  "roles": [
-   {
-    "parent": "Asset Maintenance Request Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "System Manager"
-   },
-   {
-    "parent": "Asset Maintenance Request Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Maintenance Team Supervisor"
-   },
-   {
-    "parent": "Asset Maintenance Request Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Maintenance Team Member"
-   }
-  ],
-  "timeout": 0
  }
 ]
